@@ -1,0 +1,21 @@
+{
+  "name": "kurento-many2many",
+  "version": "1.0.0",
+  "description": "Kurento WebRTC Media Server Test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "hashmap": "^2.4.0",
+    "js-yaml": "^4.1.0",
+    "kurento-client": "^7.0.0",
+    "minimist": "^1.2.8",
+    "ws": "^8.13.0"
+  },
+  "type": "module"
+}
