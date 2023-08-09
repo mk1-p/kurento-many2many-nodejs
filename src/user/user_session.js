@@ -7,15 +7,15 @@ export { UserSession }
 class UserSession {
     constructor(name, roomName, session, pipeline) {
 
-        this.name = name;
-        this.session = session;
-        this.pipeline = pipeline;
-        this.roomName = roomName;
+        this.name = name;               // User 이름
+        this.session = session;         // User 와 통신하는 WebSocket 객체
+        this.pipeline = pipeline;       // Room 으로 부터 받는 pipeline
+        this.roomName = roomName;       // 참여 방 이름
+
+        this.incomingMedia = new Map(); // 방 참여자들의 WebRTC Endpoint 목록을 담게되는 변수
+
         // KurentoFunc.createMediaElements() 메소드를 이용하여 엔트포인트를 만들어줌
         this.outgoingMedia = new KurentoFunc().createMediaElements(this.pipeline);
-
-        this.incomingMedia = new Map();
-
         this.outgoingMedia.on('IceCandidateFound', (event) => {
             const candidate = kurento.getComplexType('IceCandidate')(event.candidate);
             this.sendMessage({
