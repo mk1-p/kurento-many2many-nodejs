@@ -16,19 +16,9 @@
  */
 
 
-console.log("local.host : ",location.host)
-console.log("location : ",location.hostname)
 let ws = new WebSocket('wss://' + location.host + '/groupcall');
 let participants = {};
 let name;
-
-function testConnect() {
-
-	const WS_URL = 'wss://'+location.host+'/groupcall';
-	console.log('WS TEST URL : '+WS_URL)
-
-	let wsTest = new WebSocket(WS_URL);
-}
 
 window.onbeforeunload = function() {
 	ws.close();

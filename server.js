@@ -2,11 +2,11 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
-import path from 'path';
+
 import url from 'url';
 import express from 'express';
 import minimist from 'minimist';
-import WebSocket, { WebSocketServer } from 'ws'
+import { WebSocketServer } from 'ws'
 import fs from 'fs';
 import https from 'https';
 
@@ -56,9 +56,6 @@ let wss = new WebSocketServer({
 let roomManager = new RoomManager();
 let userRegistry = new UserRegistry();
 let callHandler = new CallHandler(roomManager,userRegistry);
-
-
-console.log("Open WS : "+wss.host)
 
 wss.on('connection', function(ws) {
 
