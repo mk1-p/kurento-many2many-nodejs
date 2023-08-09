@@ -131,6 +131,6 @@ dist
 .pnp.*
 
 # IntelliJ
-.kurento-many2many.iml
+/*.iml
 
 
